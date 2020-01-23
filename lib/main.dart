@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:flutter_todolist/onboarding.dart';
+import 'package:flutter_todolist/home.dart';
 import 'util.dart';
 
 void main() => runApp(App());
@@ -32,7 +32,7 @@ class _AppState extends State<App> {
         canvasColor: CustomColors.GreyBackground,
         fontFamily: 'rubik',
       ),
-      home: Onboarding(),
+      home: Home(),
     );
   }
 }

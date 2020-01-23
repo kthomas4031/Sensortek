@@ -17,18 +17,18 @@ FloatingActionButton customFab(context) {
     child: Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      child: Image.asset('assets/images/fab-add.png'),
+      child: Image.asset('assets/images/SensatekLogo.png'),
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: <Color>[
-            CustomColors.PurpleLight,
-            CustomColors.PurpleDark,
+            CustomColors.GreenAccent,
+            CustomColors.BlueLight,
           ],
         ),
         borderRadius: BorderRadius.all(
-          Radius.circular(50.0),
+          Radius.circular(60.0),
         ),
         boxShadow: [
           BoxShadow(

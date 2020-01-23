@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_todolist/appBars.dart';
-import 'package:flutter_todolist/bottomNavigation.dart';
 import 'package:flutter_todolist/fab.dart';
 import 'util.dart';
 
@@ -64,7 +63,6 @@ class _EmptyState extends State<Empty> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: customFab(context),
-      bottomNavigationBar: BottomNavigationBarApp(context, bottomNavigationBarIndex),
     );
   }
 }

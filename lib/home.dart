@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 import 'package:flutter_todolist/appBars.dart';
-import 'package:flutter_todolist/bottomNavigation.dart';
 import 'package:flutter_todolist/fab.dart';
 import 'package:flutter_todolist/util.dart';
 
@@ -482,8 +481,6 @@ class _HomeState extends State<Home> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: customFab(context),
-      bottomNavigationBar:
-          BottomNavigationBarApp(context, bottomNavigationBarIndex),
     );
   }
 }
