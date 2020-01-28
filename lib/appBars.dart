@@ -41,7 +41,7 @@ Widget fullAppbar(BuildContext context) {
       gradient: LinearGradient(
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
-        colors: [CustomColors.HeaderBlueDark, CustomColors.HeaderBlueLight],
+        colors: [CustomColors.GreenAccent, CustomColors.BlueBackground],
       ),
       bottom: PreferredSize(
         preferredSize: Size.fromHeight(1),
@@ -149,7 +149,7 @@ Widget emptyAppbar() {
       gradient: LinearGradient(
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
-        colors: [CustomColors.HeaderBlueDark, CustomColors.HeaderBlueLight],
+        colors: [CustomColors.GreenAccent, CustomColors.BlueBackground],
       ),
     ),
   );
