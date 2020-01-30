@@ -27,7 +27,7 @@ class _HomeState extends State<Home> {
             Container(
               margin: EdgeInsets.only(top: 15, left: 20, bottom: 15),
               child: Text(
-                'Today',
+                'Located Sensors:',
                 style: TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
@@ -40,22 +40,18 @@ class _HomeState extends State<Home> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Image.asset('assets/images/checked.png'),
+                  // Image.asset('assets/images/checked.png'),
                   Text(
-                    '07.00 AM',
-                    style: TextStyle(color: CustomColors.TextGrey),
+                    '<Sensor ID>',
+                    // style: TextStyle(color: CustomColors.TextGrey),
                   ),
                   Container(
                     width: 180,
                     child: Text(
-                      'Go jogging with Christin',
-                      style: TextStyle(
-                          color: CustomColors.TextGrey,
-                          //fontWeight: FontWeight.w600,
-                          decoration: TextDecoration.lineThrough),
-                    ),
+                      'Location or something',
+                    )
                   ),
-                  Image.asset('assets/images/bell-small.png'),
+                  // Image.asset('assets/images/bell-small.png'),
                 ],
               ),
               decoration: BoxDecoration(
