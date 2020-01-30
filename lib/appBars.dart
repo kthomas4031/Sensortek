@@ -26,7 +26,26 @@ Widget fullAppbar(BuildContext context) {
           children: <Widget>[
             Text(
               'Sensatek Sensor Monitoring',
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600,
+              shadows: [
+                    Shadow( // bottomLeft
+                      offset: Offset(-1.25, -1.25),
+                      color: Colors.black
+                    ),
+                    Shadow( // bottomRight
+                      offset: Offset(1.25, -1.25),
+                      color: Colors.black
+                    ),
+                    Shadow( // topRight
+                      offset: Offset(1.25, 1.25),
+                      color: Colors.black
+                    ),
+                    Shadow( // topLeft
+                      offset: Offset(-1.25, 1.25),
+                      color: Colors.black
+                    ),
+                  ]
+              ),
             ),
           ],
         ),
@@ -41,7 +60,7 @@ Widget fullAppbar(BuildContext context) {
       gradient: LinearGradient(
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
-        colors: [CustomColors.GreenAccent, CustomColors.BlueBackground],
+        colors: [CustomColors.SensatekGreen, CustomColors.SensatekAqua],
       ),
       bottom: PreferredSize(
         preferredSize: Size.fromHeight(1),
