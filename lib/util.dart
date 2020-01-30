@@ -54,4 +54,7 @@ class CustomColors {
   static const Color TextGrey = Color.fromRGBO(198, 198, 200, 1);
   static const Color TextWhite = Color.fromRGBO(243, 243, 243, 1);
   static const Color HeaderCircle = Color.fromRGBO(255, 255, 255, 0.17);
+
+  static const Color SensatekAqua = Color.fromRGBO(1,164,158,1);
+  static const Color SensatekGreen = Color.fromRGBO(166,233,122,1);
 }
