@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:expandable/expandable.dart';
 
 import 'package:flutter_todolist/appBars.dart';
 import 'package:flutter_todolist/fab.dart';
 import 'package:flutter_todolist/util.dart';
+
 
 class Home extends StatefulWidget {
   Home({Key key}) : super(key: key);
@@ -34,45 +36,95 @@ class _HomeState extends State<Home> {
                     color: CustomColors.TextSubHeader),
               ),
             ),
-            Container(
-              margin: EdgeInsets.fromLTRB(20, 0, 20, 15),
-              padding: EdgeInsets.fromLTRB(5, 13, 5, 13),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  // Image.asset('assets/images/checked.png'),
-                  Text(
-                    '<Sensor ID>',
-                    // style: TextStyle(color: CustomColors.TextGrey),
-                  ),
-                  Container(
-                    width: 180,
-                    child: Text(
-                      'Location or something',
-                    )
-                  ),
-                  // Image.asset('assets/images/bell-small.png'),
-                ],
-              ),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  stops: [0.015, 0.015],
-                  colors: [CustomColors.YellowIcon, Colors.white],
-                ),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(5.0),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: CustomColors.GreyBorder,
-                    blurRadius: 10.0,
-                    spreadRadius: 5.0,
-                    offset: Offset(0.0, 0.0),
-                  ),
-                ],
+            ExpandableNotifier(child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Card(
+                clipBehavior: Clip.antiAlias,
+                  child: Column(
+                    children: <Widget>[
+                    ScrollOnExpand(
+                      scrollOnExpand: true,
+                      scrollOnCollapse: false,
+                      child: ExpandablePanel(
+                        theme: const ExpandableThemeData(
+                          headerAlignment: ExpandablePanelHeaderAlignment.center,
+                          tapBodyToCollapse: true,
+                        ),
+
+                      header: Padding(
+                          padding: EdgeInsets.all(10),
+                          // child: Text(
+                          //   "<Sensor ID>",
+                          //   style: Theme.of(context).textTheme.body2,
+                          // )),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text(
+                                '<Sensor ID>',
+                              ),
+                              Container(
+                                width: 180,
+                                child: Text(
+                                  'Location or something',
+                                )
+                              ),
+                            ],
+                          )),
+                      collapsed: Text(
+                        "Data Preview or something",
+                        softWrap: true,
+                        maxLines: 2,
+                      ),
+
+                      expanded: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                        //   for (var _ in Iterable.generate(5))
+                            Padding(
+                                padding: EdgeInsets.only(bottom: 10),
+                                child: Text(
+                                  "Data",
+                                  softWrap: true,
+                                  overflow: TextOverflow.fade,
+                                )),
+                        ],
+                      ),
+
+                      builder: (_, collapsed, expanded) {
+                        return Padding(
+                          padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                          child: Expandable(
+                            collapsed: collapsed,
+                            expanded: expanded,
+                            theme: const ExpandableThemeData(crossFadePoint: 0),
+                          ),
+                        );
+                      },
               ),
             ),
-            SizedBox(height: 15)
+          ],
+        ),
+      ),
+    )),              
+            //   decoration: BoxDecoration(
+            //     gradient: LinearGradient(
+            //       stops: [0.015, 0.015],
+            //       colors: [CustomColors.YellowIcon, Colors.white],
+            //     ),
+            //     borderRadius: BorderRadius.all(
+            //       Radius.circular(5.0),
+            //     ),
+            //     boxShadow: [
+            //       BoxShadow(
+            //         color: CustomColors.GreyBorder,
+            //         blurRadius: 10.0,
+            //         spreadRadius: 5.0,
+            //         offset: Offset(0.0, 0.0),
+            //       ),
+            //     ],
+            //   ),
+            // SizedBox(height: 15)
           ],
         ),
       ),
@@ -81,3 +133,65 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
+// class Card1 extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return ExpandableNotifier(
+//         child: Padding(
+//       padding: const EdgeInsets.all(10),
+//       child: Card(
+//         clipBehavior: Clip.antiAlias,
+//         child: Column(
+//           children: <Widget>[
+//             ScrollOnExpand(
+//               scrollOnExpand: true,
+//               scrollOnCollapse: false,
+//               child: ExpandablePanel(
+//                 theme: const ExpandableThemeData(
+//                   headerAlignment: ExpandablePanelHeaderAlignment.center,
+//                   tapBodyToCollapse: true,
+//                 ),
+//                 header: Padding(
+//                     padding: EdgeInsets.all(10),
+//                     child: Text(
+//                       "ExpandablePanel",
+//                       style: Theme.of(context).textTheme.body2,
+//                     )),
+//                 collapsed: Text(
+//                   loremIpsum,
+//                   softWrap: true,
+//                   maxLines: 2,
+//                   overflow: TextOverflow.ellipsis,
+//                 ),
+//                 expanded: Column(
+//                   crossAxisAlignment: CrossAxisAlignment.start,
+//                   children: <Widget>[
+//                     for (var _ in Iterable.generate(5))
+//                       Padding(
+//                           padding: EdgeInsets.only(bottom: 10),
+//                           child: Text(
+//                             loremIpsum,
+//                             softWrap: true,
+//                             overflow: TextOverflow.fade,
+//                           )),
+//                   ],
+//                 ),
+//                 builder: (_, collapsed, expanded) {
+//                   return Padding(
+//                     padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+//                     child: Expandable(
+//                       collapsed: collapsed,
+//                       expanded: expanded,
+//                       theme: const ExpandableThemeData(crossFadePoint: 0),
+//                     ),
+//                   );
+//                 },
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     ));
+//   }
+// }
