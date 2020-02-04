@@ -26,7 +26,7 @@ Widget fullAppbar(BuildContext context) {
           children: <Widget>[
             Text(
               'Sensatek Sensor Monitoring',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600,
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600,
               shadows: [
                     Shadow( // bottomLeft
                       offset: Offset(-1.25, -1.25),
