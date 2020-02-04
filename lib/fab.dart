@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_todolist/home.dart';
 import 'package:flutter_todolist/bottomSheet.dart';
 import 'util.dart';
 
 
 
 FloatingActionButton customFab(context) {
-  Modal modal = Modal();
+  //Modal modal = Modal();
 
   return FloatingActionButton(
     onPressed: () {
-      modal.mainBottomSheet(context);
+      //modal.mainBottomSheet(context);
+      Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Home()),
+            );
     },
     elevation: 5,
     backgroundColor: Colors.transparent,

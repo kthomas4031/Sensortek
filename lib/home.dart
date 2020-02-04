@@ -4,7 +4,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:expandable/expandable.dart';
 
 import 'package:flutter_todolist/appBars.dart';
-import 'package:flutter_todolist/fab.dart';
+import 'package:flutter_todolist/empty.dart';
 import 'package:flutter_todolist/util.dart';
 
 
@@ -72,7 +72,7 @@ class _HomeState extends State<Home> {
                             ],
                           )),
                       collapsed: Text(
-                        "Data Preview or something",
+                        "Temperature Preview or something",
                         softWrap: true,
                         maxLines: 2,
                       ),
@@ -84,7 +84,7 @@ class _HomeState extends State<Home> {
                             Padding(
                                 padding: EdgeInsets.only(bottom: 10),
                                 child: Text(
-                                  "Data",
+                                  "Historical Temperature Data for past month",
                                   softWrap: true,
                                   overflow: TextOverflow.fade,
                                 )),
@@ -128,70 +128,8 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: customFab(context),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // floatingActionButton: customFab(context),
     );
   }
 }
-
-// class Card1 extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return ExpandableNotifier(
-//         child: Padding(
-//       padding: const EdgeInsets.all(10),
-//       child: Card(
-//         clipBehavior: Clip.antiAlias,
-//         child: Column(
-//           children: <Widget>[
-//             ScrollOnExpand(
-//               scrollOnExpand: true,
-//               scrollOnCollapse: false,
-//               child: ExpandablePanel(
-//                 theme: const ExpandableThemeData(
-//                   headerAlignment: ExpandablePanelHeaderAlignment.center,
-//                   tapBodyToCollapse: true,
-//                 ),
-//                 header: Padding(
-//                     padding: EdgeInsets.all(10),
-//                     child: Text(
-//                       "ExpandablePanel",
-//                       style: Theme.of(context).textTheme.body2,
-//                     )),
-//                 collapsed: Text(
-//                   loremIpsum,
-//                   softWrap: true,
-//                   maxLines: 2,
-//                   overflow: TextOverflow.ellipsis,
-//                 ),
-//                 expanded: Column(
-//                   crossAxisAlignment: CrossAxisAlignment.start,
-//                   children: <Widget>[
-//                     for (var _ in Iterable.generate(5))
-//                       Padding(
-//                           padding: EdgeInsets.only(bottom: 10),
-//                           child: Text(
-//                             loremIpsum,
-//                             softWrap: true,
-//                             overflow: TextOverflow.fade,
-//                           )),
-//                   ],
-//                 ),
-//                 builder: (_, collapsed, expanded) {
-//                   return Padding(
-//                     padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
-//                     child: Expandable(
-//                       collapsed: collapsed,
-//                       expanded: expanded,
-//                       theme: const ExpandableThemeData(crossFadePoint: 0),
-//                     ),
-//                   );
-//                 },
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     ));
-//   }
-// }
