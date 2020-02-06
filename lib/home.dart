@@ -31,11 +31,13 @@ class _HomeState extends State<Home> {
               child: Text(
                 'Located Sensors:',
                 style: TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w600,
-                    color: CustomColors.TextSubHeader),
+                    fontSize: 22,
+                    fontWeight: FontWeight.w500,
+                    color: CustomColors.TextHeader),
               ),
             ),
+
+            // TODO Make wireless scan to find connections and create Expandable Notifier for each available sensor found
             ExpandableNotifier(child: Padding(
               padding: const EdgeInsets.all(10),
               child: Card(
