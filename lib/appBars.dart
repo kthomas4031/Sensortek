@@ -26,7 +26,7 @@ Widget fullAppbar(BuildContext context) {
           children: <Widget>[
             Text(
               'Sensatek Sensor Monitoring',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600,
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600,
               shadows: [
                     Shadow( // bottomLeft
                       offset: Offset(-1.25, -1.25),
@@ -132,7 +132,7 @@ Widget fullAppbar(BuildContext context) {
 
 Widget emptyAppbar() {
   return PreferredSize(
-    preferredSize: Size.fromHeight(75.0),
+    preferredSize: Size.fromHeight(80.0),
     child: GradientAppBar(
       flexibleSpace: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -140,35 +140,66 @@ Widget emptyAppbar() {
           CustomPaint(
             painter: CircleOne(),
           ),
-          CustomPaint(
-            painter: CircleTwo(),
-          ),
+          // CustomPaint(
+          //   painter: CircleTwo(),
+          // ),
         ],
       ),
       title: Container(
-        margin: EdgeInsets.only(top: 20),
+        margin: EdgeInsets.only(top: 15),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
               'Sensatek Sensor Monitoring',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600,
+              shadows: [
+                    Shadow( // bottomLeft
+                      offset: Offset(-1.25, -1.25),
+                      color: Colors.black
+                    ),
+                    Shadow( // bottomRight
+                      offset: Offset(1.25, -1.25),
+                      color: Colors.black
+                    ),
+                    Shadow( // topRight
+                      offset: Offset(1.25, 1.25),
+                      color: Colors.black
+                    ),
+                    Shadow( // topLeft
+                      offset: Offset(-1.25, 1.25),
+                      color: Colors.black
+                    ),
+                  ]
+              ),
             ),
           ],
         ),
       ),
-      actions: <Widget>[
-        Container(
-          margin: EdgeInsets.fromLTRB(0, 20, 20, 0),
-          child: Image.asset('assets/images/photo.png'),
-        ),
-      ],
+      // actions: <Widget>[
+      //   Container(
+      //     margin: EdgeInsets.fromLTRB(0, 17, 17, 0),
+      //     child: Image.asset('assets/images/SensatekLogo.png'),
+      //   ),
+      // ],
       elevation: 0,
       gradient: LinearGradient(
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
-        colors: [CustomColors.GreenAccent, CustomColors.BlueBackground],
+        colors: [CustomColors.SensatekGreen, CustomColors.SensatekAqua],
+      ),
+      bottom: PreferredSize(
+        preferredSize: Size.fromHeight(1),
+        child: Container(
+          margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+          padding: EdgeInsets.fromLTRB(15, 5, 15, 0),
+          decoration: BoxDecoration(
+            color: CustomColors.HeaderGreyLight,
+            borderRadius: BorderRadius.circular(5.0),
+          ),
+         
+        ),
       ),
     ),
   );
