@@ -27,7 +27,7 @@ class _HomeState extends State<Home> {
           scrollDirection: Axis.vertical,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(top: 15, left: 20, bottom: 15),
+              margin: EdgeInsets.only(top: 15, left: 100, bottom: 15),
               child: Text(
                 'Located Sensors:',
                 style: TextStyle(
