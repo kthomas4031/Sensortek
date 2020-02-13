@@ -1,7 +1,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flutter_todolist">
+    package="com.example.flutter_todolist"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    
+
+    
+
+     <uses-sdk tools:overrideLibrary="io.github.edufolly.flutterbluetoothserial"/>
 
     <uses-permission android:name="android.permission.INTERNET" android:maxSdkVersion="18" />
+    
+
 
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
          calls FlutterMain.startInitialization(this); in its onCreate method.
