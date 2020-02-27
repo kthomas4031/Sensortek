@@ -4,7 +4,7 @@ import 'package:flutter_todolist/home.dart';
 import 'package:flutter_todolist/bottomSheet.dart';
 import 'util.dart';
 
-
+//Creates floating action button (sensor selector)
 
 FloatingActionButton customFab(context) {
   //Modal modal = Modal();

@@ -13,11 +13,12 @@ class App extends StatefulWidget {
   _AppState createState() => _AppState();
 }
 
-/* bluetooth stuff*/
+/* start of bluetooth stuff*/
 class BluetoothApp extends StatefulWidget {
   @override
   _BluetoothAppState createState() => _BluetoothAppState();
 }
+
 
 
 class MyApp extends StatelessWidget {
@@ -308,8 +309,9 @@ class _BluetoothAppState extends State<BluetoothApp> {
 
   
 
-/*bluetooth stuff*/
+/*end of bluetooth stuff*/
 
+//takes care of status bar presets
 class _AppState extends State<App> {
   @override
   void initState() {

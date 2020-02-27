@@ -10,7 +10,7 @@ class Empty extends StatefulWidget {
 
   _EmptyState createState() => _EmptyState();
 }
-
+//Builds Structure for sensor summary bars, allows for data pull
 class _EmptyState extends State<Empty> {
   var bottomNavigationBarIndex = 0;
 
@@ -121,7 +121,7 @@ class _EmptyState extends State<Empty> {
     );
   }
 }
-
+//Adds sensatek logo button and provides its navigation
 FloatingActionButton customFab(context) {
   //Modal modal = Modal();
 

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_todolist/home.dart';
 import 'util.dart';
 
+
+//Creates the format of the app's body
 class Modal {
   mainBottomSheet(BuildContext context) {
     showModalBottomSheet(

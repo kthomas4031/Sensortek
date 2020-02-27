@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//custom colors
 class CustomColors {
   static const Color GreyBackground = Color.fromRGBO(249, 252, 255, 1);
   static const Color GreyBorder = Color.fromRGBO(207, 207, 207, 1);

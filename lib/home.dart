@@ -14,6 +14,7 @@ class Home extends StatefulWidget {
   _HomeState createState() => _HomeState();
 }
 
+//Creates home state
 class _HomeState extends State<Home> {
   final bottomNavigationBarIndex = 0;
 

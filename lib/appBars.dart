@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
 import 'util.dart';
 
+//Creates app bar header  for the second page
 Widget fullAppbar(BuildContext context) {
   return PreferredSize(
     preferredSize: Size.fromHeight(80.0),
@@ -50,12 +51,7 @@ Widget fullAppbar(BuildContext context) {
           ],
         ),
       ),
-      // actions: <Widget>[
-      //   Container(
-      //     margin: EdgeInsets.fromLTRB(0, 17, 17, 0),
-      //     child: Image.asset('assets/images/SensatekLogo.png'),
-      //   ),
-      // ],
+     
       elevation: 0,
       gradient: LinearGradient(
         begin: Alignment.topLeft,
@@ -71,65 +67,13 @@ Widget fullAppbar(BuildContext context) {
             color: CustomColors.HeaderGreyLight,
             borderRadius: BorderRadius.circular(5.0),
           ),
-          // child: Row(
-          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //   children: <Widget>[
-          //     Column(
-          //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          //       crossAxisAlignment: CrossAxisAlignment.start,
-          //       children: <Widget>[
-          //         Text(
-          //           'Today Reminder',
-          //           style: TextStyle(
-          //               color: Colors.white,
-          //               fontSize: 17,
-          //               fontWeight: FontWeight.w600),
-          //         ),
-          //         SizedBox(
-          //           height: 3,
-          //         ),
-          //         Text(
-          //           'Meeting with client',
-          //           style: TextStyle(
-          //               color: Colors.white,
-          //               fontSize: 10,
-          //               fontWeight: FontWeight.w300),
-          //         ),
-          //         SizedBox(
-          //           height: 3,
-          //         ),
-          //         Text(
-          //           '13.00 PM',
-          //           style: TextStyle(
-          //               color: Colors.white,
-          //               fontSize: 10,
-          //               fontWeight: FontWeight.w300),
-          //         ),
-          //       ],
-          //     ),
-          //     Container(
-          //       width: MediaQuery.of(context).size.width / 2.9,
-          //     ),
-          //     Image.asset(
-          //       'assets/images/bell-left.png',
-          //       scale: 1.3,
-          //     ),
-          //     Container(
-          //       margin: EdgeInsets.only(bottom: 80),
-          //       child: Icon(
-          //         Icons.clear,
-          //         color: Colors.white,
-          //         size: 18.0,
-          //       ),
-          //     ),
-          //   ],
-          // ),
+          
         ),
       ),
     ),
   );
 }
-
+//Creates app bar header for the first page
 Widget emptyAppbar() {
   return PreferredSize(
     preferredSize: Size.fromHeight(80.0),
@@ -205,6 +149,8 @@ Widget emptyAppbar() {
   );
 }
 
+
+//adds circle flair to the header (pwetty)
 class CircleOne extends CustomPainter {
   Paint _paint;
 
