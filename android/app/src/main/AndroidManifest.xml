@@ -6,11 +6,11 @@
 
     
 
-     <uses-sdk tools:overrideLibrary="io.github.edufolly.flutterbluetoothserial"/>
+    <uses-sdk tools:overrideLibrary="io.github.edufolly.flutterbluetoothserial"/>
 
-    <uses-permission android:name="android.permission.INTERNET" android:maxSdkVersion="18" />
-    
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
          calls FlutterMain.startInitialization(this); in its onCreate method.
@@ -20,7 +20,7 @@
 
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="Flutter To-do example"
+        android:label="Sensor-Tek"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
