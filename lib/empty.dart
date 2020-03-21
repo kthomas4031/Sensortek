@@ -121,6 +121,8 @@ class _EmptyState extends State<Empty> {
     );
   }
 }
+
+
 //Adds sensatek logo button and provides its navigation
 FloatingActionButton customFab(context) {
   //Modal modal = Modal();
