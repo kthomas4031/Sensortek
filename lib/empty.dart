@@ -9,18 +9,23 @@ class Empty extends StatefulWidget {
   Empty({Key key}) : super(key: key);
 
   _EmptyState createState() => _EmptyState();
+  
 }
 //Builds Structure for sensor summary bars, allows for data pull
 class _EmptyState extends State<Empty> {
   var bottomNavigationBarIndex = 0;
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: emptyAppbar(),
+      resizeToAvoidBottomPadding: false,
       body: Center(
-        child: Container(
+        child: Container( 
+          
           width: MediaQuery.of(context).size.width / 1.2,
+        
           child: Column(
             children: <Widget>[
               Expanded(
@@ -59,18 +64,20 @@ class _EmptyState extends State<Empty> {
                                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                     children: <Widget>[
                                       Text(
-                                        '<Sensor ID>',
+                                        'Sensor ID: ' ,
                                       ),
                                       Container(
                                         width: 175,
                                         child: Text(
-                                          'Location',
+                                          '000',style: TextStyle (
+                                           fontWeight: FontWeight.bold,
+                                            )
                                         )
                                       ),
                                     ],
                                   )),
                               collapsed: Text(
-                                "Last known temperature",
+                                "Last Temperature Reading: 37C°",
                                 softWrap: true,
                                 maxLines: 2,
                               ),
@@ -82,7 +89,7 @@ class _EmptyState extends State<Empty> {
                                     Padding(
                                         padding: EdgeInsets.only(bottom: 10),
                                         child: Text(
-                                          "Historical Temperature Data for past month",
+                                          "ID: 000\n" + "Time: 03/19/20-3:23:56\n" + "Degrees: 99F°/37C°\n",
                                           softWrap: true,
                                           overflow: TextOverflow.fade,
                                         )),
@@ -104,7 +111,93 @@ class _EmptyState extends State<Empty> {
                       ],
                      ),
                     ),
-                  )), //End of Entry
+                  )
+                  
+                  
+                  ),
+                  
+
+
+
+                  ExpandableNotifier(child: Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Card(
+                        clipBehavior: Clip.antiAlias,
+                          child: Column(
+                            children: <Widget>[
+                            ScrollOnExpand(
+                              scrollOnExpand: true,
+                              scrollOnCollapse: false,
+                              child: ExpandablePanel(
+                                theme: const ExpandableThemeData(
+                                  headerAlignment: ExpandablePanelHeaderAlignment.center,
+                                  tapBodyToCollapse: true,
+                                ),
+
+                              header: Padding(
+                                  padding: EdgeInsets.all(5),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Text(
+                                        'Sensor ID: ' ,
+                                      ),
+                                      Container(
+                                        width: 175,
+                                        child: Text(
+                                          '001',style: TextStyle (
+                                           fontWeight: FontWeight.bold,
+                                            )
+                                        )
+                                      ),
+                                    ],
+                                  )),
+                              collapsed: Text(
+                                "Last Temperature Reading: 33C°",
+                                softWrap: true,
+                                maxLines: 2,
+                              ),
+
+                              expanded: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                //   for (var _ in Iterable.generate(5))
+                                    Padding(
+                                        padding: EdgeInsets.only(bottom: 10),
+                                        child: Text(
+                                          "ID: 001\n" + "Time: 03/19/20-3:22:00\n" + "Degrees: 110F°/33C°\n",
+                                          softWrap: true,
+                                          overflow: TextOverflow.fade,
+                                        )),
+                                ],
+                              ),
+
+                              builder: (_, collapsed, expanded) {
+                                return Padding(
+                                  padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                                  child: Expandable(
+                                    collapsed: collapsed,
+                                    expanded: expanded,
+                                    theme: const ExpandableThemeData(crossFadePoint: 0),
+                                  ),
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                     ),
+                    ),
+                  )
+                  
+                  
+                  ),
+
+
+
+
+
+                  
+                   //End of Entry
                  ],
                 ),
               ),
@@ -165,3 +258,5 @@ FloatingActionButton customFab(context) {
     ),
   );
 }
+
+
